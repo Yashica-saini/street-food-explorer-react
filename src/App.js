@@ -5,6 +5,7 @@ import Signup from "./components/Signup";
 import Home from "./components/Home";
 import AboutUs from "./components/AboutUs"; // if you want About Us page too
 import Contact from "./components/Contact";
+import { Mumbai } from "./components/Mumbai";
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
         {/* Example: About Us page route */}
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/mumbai" element={<Mumbai />} />
       </Routes>
     </Router>
   );

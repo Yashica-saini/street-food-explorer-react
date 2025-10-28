@@ -1,0 +1,357 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp,c_fill,q_auto/memphis/xlarge/1014015423_Mumbai.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: #d35400;
+            margin-bottom: 3rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .food-places {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .place-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .place-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .place-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+            display: flex;
+            align-items: flex-end;
+            padding: 1rem;
+        }
+
+        .place-name {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .place-content {
+            padding: 2rem;
+        }
+
+        .famous-foods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .food-item {
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .food-item:hover {
+            transform: scale(1.05);
+        }
+
+        .food-item::after {
+            /* content: '👁️';
+            position: absolute;
+            top: 50%;
+            left: 50%; */
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            font-size: 1.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .food-item:hover::after {
+            opacity: 1;
+        }
+
+        .food-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 0.5rem;
+            border: 3px solid #e74c3c;
+            transition: border-color 0.3s ease;
+        }
+
+        .food-item:hover .food-image {
+            border-color: #d35400;
+        }
+
+        .food-name {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 0;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        .modal-header {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
+        }
+
+        .modal-title {
+            position: relative;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            padding: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            z-index: 1;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .close:hover {
+            transform: scale(1.2);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .food-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .food-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .detail-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:hover {
+            border-color: #e74c3c;
+            transform: translateY(-5px);
+        }
+
+        .detail-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-value {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .place1{
+            background-image: url('https://staybloom.com/content/1667989923991-Bandra-Worli%20Sea%20Link%20Desktop.jpg');
+        }
+        .place2{
+            background-image: url('https://live.staticflickr.com/3423/3932305853_982ac5f263_b.jpg');
+        }
+        .place3{
+            background-image: url('https://yatrirailways.com/bl-content/uploads/pages/4c7c6ba1f469c2edae5c7a267354101e/Juhu-Beach.png');
+        }
+        .place4{
+            background-image: url('https://www.shutterstock.com/image-photo/borivali-mumbai-04-april-2023-600nw-2638821879.jpg')
+        }
+        .place5{
+            background-image: url('https://blogs.tripzygo.in/wp-content/uploads/2024/06/Crawford-Market-in-Mumbai-1.jpg');
+        }
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .food-places {
+                grid-template-columns: 1fr;
+            }
+        }
+    
