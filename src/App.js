@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+// App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Signup from "./components/Signup";
+import Home from "./components/Home";
+import AboutUs from "./components/AboutUs"; // if you want About Us page too
+import Contact from "./components/Contact";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Default route opens Signup */}
+        <Route path="/" element={<Signup />} />
+
+        {/* After signup, user goes to Home */}
+        <Route path="/home" element={<Home />} />
+
+        {/* Example: About Us page route */}
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
