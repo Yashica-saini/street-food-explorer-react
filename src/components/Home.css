@@ -12,7 +12,7 @@ body {
   font-family: Arial, sans-serif;
 }
 .home-page {
-  background: linear-gradient(270deg, #f9f9f9, #e0f7fa, #ffe0f7, #fff9c4); 
+  /* background: linear-gradient(270deg, #f9f9f9, #e0f7fa, #ffe0f7, #fff9c4);  */
   background-size: 800% 800%;
   animation: gradientShift 5s ease infinite;
   height: 100vh;
@@ -50,7 +50,7 @@ body {
 @keyframes slide { 0% { transform: translateX(0); } 100% { transform: translateX(-90%); } }
 .slider img { width: 100%; height: 100%; object-fit: cover; }
 
-/* overlay content */
+
 .overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   display: flex; flex-direction: column; justify-content: center; align-items: center;

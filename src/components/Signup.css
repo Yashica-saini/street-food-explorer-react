@@ -1,9 +1,8 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: 
-  /* linear-gradient(270deg, #f9f9f9, #e0f7fa, #ffe0f7, #fff9c4), */
-  url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK-FlwMFB0qIHZ31LO7P80eM-0-wse5kbofA&s') no-repeat center center/cover ;
+.signup-page {
+  background-image: url('https://w0.peakpx.com/wallpaper/101/95/HD-wallpaper-burgers-fast-food-delicious-food-sandwiches-harmful-food.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +18,7 @@ body {
   width: 450px;
   text-align: center;
   animation: fadeIn 0.8s ease-in-out;
+
 }
 
 h2 {
