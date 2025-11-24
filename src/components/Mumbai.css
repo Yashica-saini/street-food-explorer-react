@@ -1,4 +1,9 @@
-* {
+
+
+
+
+        * {
+
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -12,6 +17,7 @@
         }
 
         .hero-section {
+
           height: 60vh;
           background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
           url('https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/12/Lucknow-Basket-Chat2.jpg?resize=1065%2C715&ssl=1');
@@ -32,6 +38,33 @@
           font-size: 1.5rem;
           color: #f0f0f0;
           text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://res.cloudinary.com/ddjuftfy2/image/upload/f_webp,c_fill,q_auto/memphis/xlarge/1014015423_Mumbai.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+
         }
 
         .container {

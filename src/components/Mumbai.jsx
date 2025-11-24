@@ -135,7 +135,11 @@ export function Mumbai() {
             if (modalDescription) modalDescription.textContent = food.description;
 
             // Clear and populate details
+
             if (modalDetails) {  
+
+            if (modalDetails) {
+
                 modalDetails.innerHTML = '';
                 food.details.forEach(detail => {
                     const detailCard = document.createElement('div');
